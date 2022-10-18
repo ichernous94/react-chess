@@ -1,6 +1,6 @@
 import React from 'react';
 import CellComponent from './CellComponent';
-import { Board } from './models/Board';
+import { Board } from '../models/Board';
 
 interface BoardProps {
   board: Board;

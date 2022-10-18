@@ -5,7 +5,7 @@ import './App.css';
 import BoardComponent from './components/BoardComponent';
 
 // Classes
-import { Board } from './components/models/Board';
+import { Board } from './models/Board';
 
 const App: React.FC = () => {
   const [board, setBoard] = useState(new Board());

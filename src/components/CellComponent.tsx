@@ -1,5 +1,5 @@
 import React from 'react';
-import { Cell } from './models/Cell';
+import { Cell } from '../models/Cell';
 
 interface CellComponentProps {
   cell: Cell;
