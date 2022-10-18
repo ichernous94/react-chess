@@ -1,3 +1,4 @@
-export class Colors {
-  
+export enum Colors {
+  WHITE = 'white',
+  BLACK = 'black',
 }
