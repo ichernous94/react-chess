@@ -4,6 +4,7 @@ import './App.css';
 // Components
 import BoardComponent from './components/BoardComponent';
 import LostFigures from './components/LostFigures';
+import Timer from './components/Timer';
 
 // Classes
 import { Board } from './models/Board';
@@ -34,6 +35,7 @@ const App: React.FC = () => {
 
   return (
     <div className="app">
+      <Timer restart={restart} currentPlayer={currentPlayer} />
       <BoardComponent
         board={board}
         setBoard={setBoard}
