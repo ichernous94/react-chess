@@ -74,7 +74,3 @@ const BoardComponent: React.FC<BoardProps> = ({
 };
 
 export default BoardComponent;
-function swapPlayer() {
-  throw new Error('Function not implemented.');
-}
-
