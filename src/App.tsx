@@ -40,7 +40,7 @@ const App: React.FC = () => {
         currentPlayer={currentPlayer}
         swapPlayer={swapPlayer}
       />
-      <div>
+      <div className='lost'>
         <LostFigures title="Black Figure" figures={board.lostBlackFigures} />
         <LostFigures title="White Figure" figures={board.lostWhiteFigures} />
       </div>

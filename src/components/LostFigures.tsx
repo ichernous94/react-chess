@@ -8,7 +8,7 @@ interface LostFiguresProps {
 
 const LostFigures: React.FC<LostFiguresProps> = ({ title, figures }) => {
   return (
-    <div className="lost">
+    <div className="lost__figure">
       <h3>{title}</h3>
       {figures.map((figure) => (
         <div key={figure.id}>
