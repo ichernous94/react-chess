@@ -2,13 +2,16 @@ import React, { useEffect, useState } from 'react';
 import CellComponent from './CellComponent';
 import { Board } from '../models/Board';
 import { Cell } from '../models/Cell';
+import { Player } from '../models/Player';
 
 interface BoardProps {
   board: Board;
   setBoard: (board: Board) => void;
+  currentPlayer: Player | null;
+  swapPlayer: () => void;
 }
 
-const BoardComponent: React.FC<BoardProps> = ({ board, setBoard }) => {
+const BoardComponent: React.FC<BoardProps> = ({ board, setBoard, currentPlayer }) => {
   const [selectedCell, setSelectedCell] = useState<Cell | null>(null); // cell is selected or not
 
   const click = (cell: Cell) => {
@@ -18,10 +21,13 @@ const BoardComponent: React.FC<BoardProps> = ({ board, setBoard }) => {
       selectedCell.figure?.canMove(cell)
     ) {
       selectedCell.moveFigure(cell);
+      swapPlayer();
       setSelectedCell(null);
       updateBoard();
     } else {
-      setSelectedCell(cell);
+      if (cell.figure?.color === currentPlayer?.color) {
+        setSelectedCell(cell);
+      }
     }
   };
 
@@ -60,3 +66,7 @@ const BoardComponent: React.FC<BoardProps> = ({ board, setBoard }) => {
 };
 
 export default BoardComponent;
+function swapPlayer() {
+  throw new Error('Function not implemented.');
+}
+
