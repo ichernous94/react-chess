@@ -11,7 +11,12 @@ interface BoardProps {
   swapPlayer: () => void;
 }
 
-const BoardComponent: React.FC<BoardProps> = ({ board, setBoard, currentPlayer }) => {
+const BoardComponent: React.FC<BoardProps> = ({
+  board,
+  setBoard,
+  currentPlayer,
+  swapPlayer,
+}) => {
   const [selectedCell, setSelectedCell] = useState<Cell | null>(null); // cell is selected or not
 
   const click = (cell: Cell) => {
@@ -46,21 +51,24 @@ const BoardComponent: React.FC<BoardProps> = ({ board, setBoard, currentPlayer }
   };
 
   return (
-    <div className="board">
-      {board.cells.map((row, index) => (
-        <React.Fragment key={index}>
-          {row.map((cell) => (
-            <CellComponent
-              key={cell.id}
-              cell={cell}
-              selected={
-                cell.x === selectedCell?.x && cell.y === selectedCell?.y
-              }
-              click={click}
-            />
-          ))}
-        </React.Fragment>
-      ))}
+    <div>
+      <h3>Current Player {currentPlayer?.color}</h3>
+      <div className="board">
+        {board.cells.map((row, index) => (
+          <React.Fragment key={index}>
+            {row.map((cell) => (
+              <CellComponent
+                key={cell.id}
+                cell={cell}
+                selected={
+                  cell.x === selectedCell?.x && cell.y === selectedCell?.y
+                }
+                click={click}
+              />
+            ))}
+          </React.Fragment>
+        ))}
+      </div>
     </div>
   );
 };
