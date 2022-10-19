@@ -53,10 +53,15 @@ export class Cell {
     return true;
   }
 
+  setFigure(figure: Figure) {
+    this.figure = figure;
+    this.figure.cell = this;
+  }
+
   moveFigure(target: Cell) {
     if (this.figure && this.figure.canMove(target)) {
       this.figure.moveFigure(target);
-      target.figure = this.figure;
+      target.setFigure(this.figure);
       this.figure = null;
     }
   }
