@@ -19,6 +19,7 @@ const BoardComponent: React.FC<BoardProps> = ({ board, setBoard }) => {
     ) {
       selectedCell.moveFigure(cell);
       setSelectedCell(null);
+      updateBoard();
     } else {
       setSelectedCell(cell);
     }
