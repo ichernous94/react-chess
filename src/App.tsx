@@ -3,6 +3,7 @@ import './App.css';
 
 // Components
 import BoardComponent from './components/BoardComponent';
+import LostFigures from './components/LostFigures';
 
 // Classes
 import { Board } from './models/Board';
@@ -39,6 +40,10 @@ const App: React.FC = () => {
         currentPlayer={currentPlayer}
         swapPlayer={swapPlayer}
       />
+      <div>
+        <LostFigures title="Black Figure" figures={board.lostBlackFigures} />
+        <LostFigures title="White Figure" figures={board.lostWhiteFigures} />
+      </div>
     </div>
   );
 };
