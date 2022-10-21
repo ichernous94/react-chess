@@ -107,3 +107,12 @@
   cursor: pointer;
   transform: translateY(-3px);
 }
+
+/* TODOO */
+
+@media (max-width: 680px) {
+  .lost,
+  .timer {
+    display: none;
+  }
+}
