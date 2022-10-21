@@ -3,7 +3,7 @@ import { Cell } from '../Cell';
 import { Colors } from '../Colors';
 
 export enum FigureNames {
-  FIGURE = 'Фигура', // от нее будут наследоваться все фигуры
+  FIGURE = 'Фигура', // extends all figures
   KING = 'Король',
   KNIGHT = 'Конь',
   PAWN = 'Пешка',
@@ -29,16 +29,12 @@ export class Figure {
   }
 
   canMove(target: Cell): boolean {
-    if (target.figure?.color === this.color) {
-      return false;
-    }
-    if (target.figure?.name === FigureNames.KING) {
-      return false;
-    }
+    if (target.figure?.color === this.color) return false;
+    if (target.figure?.name === FigureNames.KING) return false;
     return true;
   }
 
   moveFigure(target: Cell): void {
-    console.log(20);
+    console.log(target.figure);
   }
 }
