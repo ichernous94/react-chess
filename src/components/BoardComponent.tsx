@@ -52,7 +52,7 @@ const BoardComponent: React.FC<BoardProps> = ({
 
   return (
     <div>
-      <h3>Current Player {currentPlayer?.color}</h3>
+      <h3 style={{marginBottom: '15px', textAlign: 'center'}}>Current Player {currentPlayer?.color}</h3>
       <div className="board">
         {board.cells.map((row, index) => (
           <React.Fragment key={index}>

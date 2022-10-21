@@ -9,13 +9,13 @@ interface LostFiguresProps {
 const LostFigures: React.FC<LostFiguresProps> = ({ title, figures }) => {
   return (
     <div className="lost__figure">
-      <h3>{title}</h3>
+      <h3 style={{textAlign: 'center'}}>{title}</h3>
       {figures.map((figure) => (
-        <div key={figure.id}>
-          {figure.name}{' '}
+        <div className='figure__text' key={figure.id}>
           {figure.logo && (
             <img width={20} height={20} src={figure.logo} alt="figure" />
           )}
+          {figure.name}{' '}
         </div>
       ))}
     </div>

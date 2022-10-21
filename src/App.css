@@ -5,12 +5,18 @@
 }
 
 .app {
+  color: white;
   width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: beige;
+  background: url('./assets/background.webp') no-repeat center/cover;
+}
+
+.board-column {
+  display: flex;
+  flex-direction: column;
 }
 
 .board {
@@ -56,16 +62,48 @@
 }
 
 .lost {
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-left: 50px;
+  gap: 15px;
+  margin-left: 30px;
 }
 
 .lost__figure {
-  height: calc(50vh - 90px);
-  padding: 30px;
-  background-color: lightgray;
+  width: 150px;
+  padding: 10px;
+  background-color: #637893;
+  box-shadow: 0px 0px 10px 5px #637893;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.figure__text {
+  display: flex;
+  align-items: center;
+}
+
+.timer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  margin-right: 30px;
+}
+
+.timer__btn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 10px;
+  background-color: #9eaaba;
+  transition: all .3s ease;
+}
+
+.timer__btn:hover {
+  cursor: pointer;
+  transform: translateY(-3px);
 }

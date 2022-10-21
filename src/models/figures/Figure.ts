@@ -3,13 +3,13 @@ import { Cell } from '../Cell';
 import { Colors } from '../Colors';
 
 export enum FigureNames {
-  FIGURE = 'Фигура', // extends all figures
-  KING = 'Король',
-  KNIGHT = 'Конь',
-  PAWN = 'Пешка',
-  QUEEN = 'Ферзь',
-  ROOK = 'Ладья',
-  BISHOP = 'Слон',
+  FIGURE = 'Figure', // extends all figures
+  KING = 'King',
+  KNIGHT = 'Knight',
+  PAWN = 'Pawn',
+  QUEEN = 'Queen',
+  ROOK = 'Rook',
+  BISHOP = 'Bishop',
 }
 
 export class Figure {
